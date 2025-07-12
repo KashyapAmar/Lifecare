@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Accommodation Finder</title>
+    <link rel="stylesheet" href="accomodation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-home"></i> Student Accommodation Finder</h1>
+            <p>Find the perfect place to stay near your university</p>
+        </div>
+    </header>
+
+    <div class="search-container">
+        <div class="container">
+            <div class="search-box">
+                <select id="city-select">
+                    <option value="">Select City</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="pune">Pune</option>
+                    <option value="hyderabad">Hyderabad</option>
+                </select>
+                <select id="university-select">
+                    <option value="">Near University (Optional)</option>
+                    <option value="du">Delhi University</option>
+                    <option value="iitb">IIT Bombay</option>
+                    <option value="iisc">IISc Bangalore</option>
+                </select>
+                <select id="type-select">
+                    <option value="">Accommodation Type</option>
+                    <option value="hostel">Hostel/PG</option>
+                    <option value="apartment">Shared Apartment</option>
+                    <option value="flat">Private Flat</option>
+                </select>
+                <button id="search-btn">Search <i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="filter-options">
+            <div class="price-filter">
+                <label for="price-range">Price Range:</label>
+                <input type="range" id="price-range" min="2000" max="20000" value="10000" step="1000">
+                <span id="price-value">₹10,000/month</span>
+            </div>
+            <div class="amenities-filter">
+                <h3>Facilities:</h3>
+                <div class="amenities-grid">
+                    <label><input type="checkbox" name="wifi"> WiFi</label>
+                    <label><input type="checkbox" name="laundry"> Laundry</label>
+                    <label><input type="checkbox" name="food"> Food Included</label>
+                    <label><input type="checkbox" name="ac"> AC</label>
+                    <label><input type="checkbox" name="security"> 24/7 Security</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-container">
+            <div class="results-header">
+                <h2>Available Accommodations</h2>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="list"><i class="fas fa-list"></i></button>
+                    <button class="view-btn" data-view="map"><i class="fas fa-map-marked-alt"></i></button>
+                </div>
+            </div>
+
+            <div class="accommodation-list" id="list-view">
+                <!-- Hostel Card 1 -->
+                <div class="accommodation-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Hostel Image">
+                        <span class="price-tag">₹8,500/month</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Green Valley Girls Hostel</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Near Delhi University, North Campus</p>
+                        <div class="facilities">
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-utensils"></i> Food</span>
+                            <span><i class="fas fa-shield-alt"></i> Security</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="contact-btn">Contact Owner</a>
+                            <a href="#" class="details-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hostel Card 2 -->
+                <div class="accommodation-card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Hostel Image">
+                        <span class="price-tag">₹12,000/month</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Cosmic Boys PG</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Near IIT Bombay, Powai</p>
+                        <div class="facilities">
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-snowflake"></i> AC</span>
+                            <span><i class="fas fa-shield-alt"></i> Security</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="contact-btn">Contact Owner</a>
+                            <a href="#" class="details-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More cards would go here -->
+            </div>
+
+            <div class="accommodation-map" id="map-view">
+                <!-- Map would be rendered here -->
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Map view would show locations of accommodations</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="tips-section">
+        <div class="container">
+            <h2><i class="fas fa-lightbulb"></i> Accommodation Tips for Students</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Safety First</h3>
+                    <p>Always check security measures like CCTV, guards, and entry/exit policies before booking.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Location Matters</h3>
+                    <p>Consider distance to campus, public transport, and nearby amenities.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Read Reviews</h3>
+                    <p>Check online reviews from previous tenants to understand the living experience.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Understand Costs</h3>
+                    <p>Clarify what's included in rent (electricity, water, food) to avoid surprises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Student Accommodation Finder</p>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">List Your Property</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="accomodation.js"></script>
+</body>
+</html>
